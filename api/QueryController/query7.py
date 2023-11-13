@@ -3,6 +3,7 @@ import pandas as pd
 
 x = input('Number of days')
 class Query7:
+    x = input('Number of days')
     def __init__(self):
         self.con = PostgresConnection().getConnection()
         print("Constructor Called")
