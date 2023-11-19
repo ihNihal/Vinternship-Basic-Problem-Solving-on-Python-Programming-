@@ -2,6 +2,8 @@ from flask import jsonify, request
 from flask.views import MethodView
 from QueryController.query7 import Query7
 
+
+
 class Query7API(MethodView):
     
         
