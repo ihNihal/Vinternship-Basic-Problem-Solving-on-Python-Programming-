@@ -23,7 +23,7 @@ class Query7:
         select_stmt = query        
         cur.execute(select_stmt)
         result = cur.fetchall()
-        pd_data = pd.DataFrame(list(result), columns = ['Item Name'])
+        pd_data = pd.DataFrame(list(result), columns = ['Item_Name'])
         pd_data = pd_data.dropna()
         return pd_data.to_dict(orient='records')
     

@@ -32,8 +32,11 @@ export class QueryService {
     return this.http.get<any>(`${baseUrl}/query6`);
     
   }
-  getQuery7ItemName(): Observable<any> {
-    return this.http.get<any>(`${baseUrl}/query7`);
+  getDataByDays(days: string): Observable<any> {
+    return this.http.post<any>(`${baseUrl}/query7`, {days: days});
+  }
+  getQuery7ItemName(days: string): Observable<any> {
+    return this.http.post<any>(`${baseUrl}/query7`, {days: days});
     
   }
   getQuery8ItemQuantityQuarter(): Observable<any> {

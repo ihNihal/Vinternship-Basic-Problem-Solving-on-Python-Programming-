@@ -45,6 +45,9 @@
       margin-bottom: 10px;
       color: #343a40;
     }
+    .row{
+      padding-left: 550px;
+    }
   </style>
 </head>
 <body>
@@ -55,6 +58,10 @@
       <div class="card">
         <div class="card-header text-center">
           <h2>Query 7</h2>
+        </div>
+        <div class="input">
+          <input type="text" #days placeholder="Enter Days">
+          <button (click)=" getQuery7ItemName(days.value)">Enter</button>
         </div>
         <div class="card-content text-center">
           <div *ngFor="let data of data_all">

@@ -13,24 +13,30 @@ export class Query7Component implements OnInit {
 
   data_all: any[] = [];
   item_name: any[] = [];
-  
+  val:string = "";
 
 
   constructor(private queryService: QueryService, private http: HttpClient) {
   }
 
   ngOnInit() {
-    this.getQuery7ItemName();
+    this.getQuery7ItemName(this.val);
   }
 
-  getQuery7ItemName(): void {
-    this.queryService.getQuery7ItemName().subscribe((data: any) => {
+  getValue(val:string)
+  {
+    this.queryService.getDataByDays(val).subscribe((data:any) =>{
+      this.data_all = data;
+    })
+   
+  }
+
+  getQuery7ItemName(val:string): void {
+    this.queryService.getQuery7ItemName(val).subscribe((data: any) => {
         for (const d of data) {
           console.log(d)
+          console.log(data)
           this.item_name.push(d.month)
-          
-
-
         }
         this.data_all = data;
       }
