@@ -66,12 +66,14 @@
   }
 
   .content {
+    position: relative;
     display: flex;
     margin: 82px auto 32px;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
     align-items: center;
+    vertical-align: middle;
   }
 
   svg.material-icons {
@@ -102,21 +104,116 @@
     height: 40px;
     width: 200px;
     margin: 0 8px 16px;
-    padding: 16px;
+    padding: 2px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
-    line-height: 24px;
+    line-height: 5px;
+  }
+  .button {
+    position: absolute;
+    top: 10%;
+    background-color: #0a0a23;
+    color: #eee;
+    border:none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+    padding:2px;
+    padding-left: 30px;
+    min-height:10px; 
+    min-width: 120px;
   }
 
+
+/* CSS */
+.button-17 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.button-17:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+  .button:hover{
+    background-color: #002ead;
+    transition:0.7s;
+  }
+  .button:acitve{
+    background-color: #ffbf00;
+  }
+  .button:focus{
+    outline-color:transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 4px #5a01a7;  }
   .card-container .card:not(:last-child) {
     margin-right: 0;
   }
 
   .card.card-small {
-    height: 16px;
+    transform: translate(0,20%);
+    height: 100px;
     width: 168px;
   }
 
@@ -165,7 +262,7 @@
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color: black;
     text-decoration: none;
   }
 
@@ -346,17 +443,17 @@
         </g>
       </g>
     </svg>
-    <span style="margin-left: 60px; font-size: 20px; font-weight: bold"><a [routerLink]="'/'">Home</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query1'">Query1</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query2'">Query2</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query3'">Query3</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query4'">Query4</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query5'">Query5</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query6'">Query6</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query7'">Query7</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query8'">Query8</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query9'">Query9</a></span>
-    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a [routerLink]="'query10'">Query10</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17" [routerLink]="'/'">Home</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query1'">Query1</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query2'">Query2</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query3'">Query3</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query4'">Query4</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query5'">Query5</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query6'">Query6</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query7'">Query7</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query8'">Query8</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query9'">Query9</a></span>
+    <span style="margin-left: 20px; font-size: 20px; font-weight: bold"><a type="button" class="button-17"  [routerLink]="'query10'">Query10</a></span>
 
 
 
