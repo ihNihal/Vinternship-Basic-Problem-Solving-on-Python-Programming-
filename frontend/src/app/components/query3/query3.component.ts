@@ -15,6 +15,8 @@ export class Query3Component implements OnInit {
   barishal: any[] = [];
   sales: any[] = [];
 
+
+  
   constructor(private queryService: QueryService, private http: HttpClient) {
   }
 

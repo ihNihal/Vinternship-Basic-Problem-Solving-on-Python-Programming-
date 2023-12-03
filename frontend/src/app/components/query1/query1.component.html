@@ -44,29 +44,40 @@
     .card h4 {
       margin-bottom: 10px;
     }
-    .row{
-      padding-left: 550px;
+    .chart-wrapper{
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      
     }
+    
+    
   </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="row">
-    <div class="col-4 p-2">
-      <div class="card">
-        <div class="card-header text-center">
-          <h2>Query 1</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-4 p-2">
+        <div class="card p-2 text-center">
+          <h2 class="text-primary text-center">Query 1</h2>
+          <h4 *ngFor="let data of data_all">
+            {{data.division_name}} - {{data.sales}}
+          </h4>
         </div>
-        <div class="card-content text-center">
-          <div *ngFor="let data of data_all">
-            <h4>{{ data.division }} - {{ data.sales }}</h4>
-          </div>
+      </div>
+      <div class="col-8">
+        <div class="chart-wrapper">
+          <canvas baseChart
+                  [type]="'line'"
+                  [datasets]="chartData"
+                  [labels]="chartLabels"
+                  [options]="chartOptions">
+          </canvas>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>

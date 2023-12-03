@@ -45,29 +45,43 @@
       margin-bottom: 10px;
       color: #343a40;
     }
-    .row{
-      padding-left: 550px;
-    }
+   
   </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="row">
-    <div class="col-4 p-2">
-      <div class="card">
-        <div class="card-header text-center">
-          <h2>Query 8</h2>
-        </div>
-        <div class="card-content text-center">
-          <div *ngFor="let data of data_all">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 p-2">
+        <div class="card p-2 text-center">
+          <h2 class="text-primary text-center">Query 8</h2>
+          <h4 *ngFor="let data of data_all">
             <h4>{{ data.Item_name }} - {{ data.Quantity }} - {{ data.Quarter }}</h4>
-          </div>
+          </h4>
         </div>
+      </div>
+      <div class="col-8">
+       <div>
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+          <tr>
+              <th>Item_name</th>
+              <th>Quantity</th>
+              <th>Quarter</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of data_all">
+              <td>{{ data.Item_name }}</td>
+              <td>{{ data.Quantity }}</td>
+              <td>{{ data.Quarter }}</td>
+          </tr>
+          </tbody>
+      </table>
+       </div>
       </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>
