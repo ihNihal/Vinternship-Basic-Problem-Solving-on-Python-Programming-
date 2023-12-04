@@ -3,6 +3,8 @@ import {ChartDataset, ChartOptions} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from 'rxjs';
+
 
 @Component({
   selector: 'app-query9',
@@ -15,6 +17,8 @@ export class Query9Component implements OnInit {
   item_name: any[] = [];
   quantity: any[] = [];
   division: any[] = [];
+  dtoptions: DataTables.Settings={};
+  dtTrigger: Subject<any> = new Subject<any>();
 
 
   constructor(private queryService: QueryService, private http: HttpClient) {
@@ -22,6 +26,9 @@ export class Query9Component implements OnInit {
 
   ngOnInit() {
     this.getQuery9DivisionItemQuantity();
+    this.dtoptions = {
+      pagingType:'full_numbers'
+    }
   }
 
   getQuery9DivisionItemQuantity(): void {
@@ -34,6 +41,8 @@ export class Query9Component implements OnInit {
 
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
+
       }
     )
   }

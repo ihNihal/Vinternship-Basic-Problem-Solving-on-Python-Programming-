@@ -3,6 +3,8 @@ import {ChartDataset, ChartOptions,Chart} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from 'rxjs';
+
 
 @Component({
   selector: 'app-query6',
@@ -16,6 +18,8 @@ export class Query6Component implements OnInit {
   Quantity: any[] = [];
   Store_key: any[] = [];
   public chart: any;
+  dtoptions: DataTables.Settings={};
+  dtTrigger: Subject<any> = new Subject<any>();
 
   
 
@@ -49,6 +53,9 @@ export class Query6Component implements OnInit {
   ngOnInit() {
     this.getQuery6ItemQuantityStore();
     this.createChart();
+    this.dtoptions = {
+      pagingType:'full_numbers'
+    }
   }
 
   getQuery6ItemQuantityStore(): void {
@@ -61,6 +68,8 @@ export class Query6Component implements OnInit {
 
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
+
       }
     )
   }

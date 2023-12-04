@@ -54,10 +54,26 @@
     <div class="row">
       <div class="col-4 p-2">
         <div class="card p-2 text-center">
-          <h2 class="text-primary text-center">Query 2</h2>
-          <h4 *ngFor="let data of data_all">
-            <h4>{{ data.Month }} - {{ data.Quantity }} - {{ data.Store }}</h4>
-          </h4>
+          <h2 class="text-primary text-center">Query 10</h2>
+          <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Month</th>
+                <th>Quantity</th>
+                <th>Store</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of data_all">
+                <td>{{ data.Month }}</td>
+                <td>{{ data.Quantity }}</td>
+                <td>{{ data.Store }}</td>
+
+               
+            </tr>
+            </tbody>
+        </table>
         </div>
       </div>
       <div class="col-8">

@@ -3,6 +3,7 @@ import {ChartDataset, ChartOptions} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from 'rxjs';
 
 
 @Component({
@@ -15,6 +16,8 @@ export class Query1Component implements OnInit {
   data_all: any[] = [];
   division: any[] = [];
   sales: any[] = [];
+  dtoptions: DataTables.Settings={};
+  dtTrigger: Subject<any> = new Subject<any>();
 
   chartData: ChartDataset[] = [
     {
@@ -76,6 +79,9 @@ export class Query1Component implements OnInit {
 
   ngOnInit() {
     this.query1DivisionData();
+    this.dtoptions = {
+      pagingType:'full_numbers'
+    }
   }
 
   query1DivisionData(): void {
@@ -86,6 +92,8 @@ export class Query1Component implements OnInit {
           this.sales.push(d.sales)
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
+
       }
     )
   }

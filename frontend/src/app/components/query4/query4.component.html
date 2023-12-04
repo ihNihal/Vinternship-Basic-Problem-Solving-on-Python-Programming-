@@ -60,9 +60,21 @@
           <h2>Query 4</h2>
         </div>
         <div class="card-content text-center">
-          <div *ngFor="let data of data_all">
-            <h4>{{ data.sales }} - {{ data.year }}</h4>
-          </div>
+          <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Sales</th>
+                <th>Year</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of data_all">
+                <td>{{ data.sales }}</td>
+                <td>{{ data.year }}</td>
+               
+            </tr>
+            </tbody>
+        </table>
         </div>
       </div>
     </div>

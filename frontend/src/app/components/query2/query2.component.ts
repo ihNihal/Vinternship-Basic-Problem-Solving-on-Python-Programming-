@@ -3,6 +3,7 @@ import {ChartDataset, ChartOptions,Chart} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-query2',
@@ -15,7 +16,8 @@ export class Query2Component implements OnInit {
   Name: any[] = [];
   sales: any[] = [];
   public chart: any;
-  dtOptions: DataTables.Settings = {};
+  dtoptions: DataTables.Settings={};
+  dtTrigger: Subject<any> = new Subject<any>();
 
 
   constructor(private queryService: QueryService, private http: HttpClient) {
@@ -24,6 +26,9 @@ export class Query2Component implements OnInit {
   ngOnInit() {
     this.query2NameSales();
     this.createChart();
+    this.dtoptions = {
+      pagingType:'full_numbers'
+    }
   }
 
   createChart(){
@@ -56,6 +61,7 @@ export class Query2Component implements OnInit {
           this.sales.push(d.sales)
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
         
       }
     )

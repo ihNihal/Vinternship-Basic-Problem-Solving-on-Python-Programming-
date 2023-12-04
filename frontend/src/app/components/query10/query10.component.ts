@@ -3,6 +3,8 @@ import {ChartDataset, ChartOptions,Chart} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from 'rxjs';
+
 
 
 @Component({
@@ -17,6 +19,8 @@ export class Query10Component implements OnInit {
   Quantity: any[] = [];
   Store: any[] = [];
   public chart: any;
+  dtoptions: DataTables.Settings={};
+  dtTrigger: Subject<any> = new Subject<any>();
 
 
   constructor(private queryService: QueryService, private http: HttpClient) {
@@ -25,6 +29,9 @@ export class Query10Component implements OnInit {
   ngOnInit() {
     this.getQuery10MonthQuantityStore();
     this.createChart();
+    this.dtoptions = {
+      pagingType:'full_numbers'
+    }
   }
 
   createChart(){
@@ -61,6 +68,7 @@ export class Query10Component implements OnInit {
 
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
       }
     )
   }

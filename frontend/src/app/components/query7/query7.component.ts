@@ -3,6 +3,8 @@ import {ChartDataset, ChartOptions} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from 'rxjs';
+
 
 @Component({
   selector: 'app-query7',
@@ -14,6 +16,8 @@ export class Query7Component implements OnInit {
   data_all: any[] = [];
   item_name: any[] = [];
   val:string = "";
+  dtoptions: DataTables.Settings={};
+  dtTrigger: Subject<any> = new Subject<any>();
 
 
   constructor(private queryService: QueryService, private http: HttpClient) {
@@ -21,6 +25,9 @@ export class Query7Component implements OnInit {
 
   ngOnInit() {
     this.getQuery7ItemName(this.val);
+    this.dtoptions = {
+      pagingType:'full_numbers'
+    }
   }
 
   getValue(val:string)
@@ -39,6 +46,7 @@ export class Query7Component implements OnInit {
           this.item_name.push(d.month)
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
       }
     )
   }

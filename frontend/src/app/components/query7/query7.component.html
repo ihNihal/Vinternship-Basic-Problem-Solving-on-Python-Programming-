@@ -64,9 +64,21 @@
           <button (click)=" getQuery7ItemName(days.value)">Enter</button>
         </div>
         <div class="card-content text-center">
-          <div *ngFor="let data of data_all">
-            <h4>{{ data.Item_Name }}</h4>
-          </div>
+          <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Item Name</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of data_all">
+                <td>{{ data.Item_Name }}</td>
+              
+               
+            </tr>
+            </tbody>
+        </table>
         </div>
       </div>
     </div>

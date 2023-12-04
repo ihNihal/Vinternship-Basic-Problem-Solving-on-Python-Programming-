@@ -3,6 +3,8 @@ import {ChartDataset, ChartOptions} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from 'rxjs';
+
 
 @Component({
   selector: 'app-query3',
@@ -14,6 +16,8 @@ export class Query3Component implements OnInit {
   data_all: any[] = [];
   barishal: any[] = [];
   sales: any[] = [];
+  dtoptions: DataTables.Settings={};
+  dtTrigger: Subject<any> = new Subject<any>();
 
 
   
@@ -22,6 +26,9 @@ export class Query3Component implements OnInit {
 
   ngOnInit() {
     this.query3BarishalSales();
+    this.dtoptions = {
+      
+    }
   }
 
   query3BarishalSales(): void {
@@ -32,6 +39,8 @@ export class Query3Component implements OnInit {
           this.sales.push(d.sales)
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
+
       }
     )
   }

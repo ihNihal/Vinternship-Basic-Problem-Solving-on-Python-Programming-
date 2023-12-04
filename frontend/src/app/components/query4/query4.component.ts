@@ -3,6 +3,8 @@ import {ChartDataset, ChartOptions} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
+import {Subject} from 'rxjs';
+
 
 @Component({
   selector: 'app-query4',
@@ -14,6 +16,8 @@ export class Query4Component implements OnInit {
   data_all: any[] = [];
   sales: any[] = [];
   year: any[] = [];
+  dtoptions: DataTables.Settings={};
+  dtTrigger: Subject<any> = new Subject<any>();
 
 
   constructor(private queryService: QueryService, private http: HttpClient) {
@@ -21,6 +25,9 @@ export class Query4Component implements OnInit {
 
   ngOnInit() {
     this.getQuery4SalesYear();
+    this.dtoptions = {
+      
+    }
   }
 
   getQuery4SalesYear(): void {
@@ -32,6 +39,8 @@ export class Query4Component implements OnInit {
 
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
+
       }
     )
   }

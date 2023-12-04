@@ -13,92 +13,74 @@ import {Subject} from 'rxjs';
   templateUrl: './query8.component.html',
   styleUrls: ['./query8.component.css']
 })
-export class Query8Component implements OnInit ,OnDestroy {
+export class Query8Component implements OnInit  {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
   data_all: any[] = [];
-  item_name: any[] = [];
-  quantity: any[] = [];
+  Item_name: any[] = [];
+  Quantity: any[] = [];
   quarter: any[] = [];
-
+  dtoptions: DataTables.Settings={};
 
   
-  // chartData: ChartDataset[] = [
-  //   {
-  //     type: "bar",
-  //     label: 'Sales accoriding to customer',
-  //     data: this.quantity,
+  chartData: ChartDataset[] = [
+    {
+      type: "line",
+      label: 'Sales accoriding to customer',
+      data: this.Quantity,
     
-  //   }
-  // ];
-  // chartLabels: string[] = this.quantity;
+    }
+  ];
+  chartLabels: string[] = this.Item_name;
 
-  // chartOptions: ChartOptions = {
+  chartOptions: ChartOptions = {
 
-  //   // ⤵️ Fill the wrapper
-  //   responsive: true,
-  //   maintainAspectRatio: true,
+    // ⤵️ Fill the wrapper
+    responsive: true,
+    maintainAspectRatio: true,
 
-  //   // // ⤵️ Remove the grids
-  //   // scales: {
-  //   //   xAxis: {
-  //   //     display: false,
-  //   //     grid: {
-  //   //       drawBorder: false // removes random border at bottom
-  //   //     }
-  //   //   },
-  //   //   yAxis: {
-  //   //     display: false
-  //   //   }
-  //   // },
+    // // ⤵️ Remove the grids
+    // scales: {
+    //   xAxis: {
+    //     display: false,
+    //     grid: {
+    //       drawBorder: false // removes random border at bottom
+    //     }
+    //   },
+    //   yAxis: {
+    //     display: false
+    //   }
+    // },
 
-  //   plugins: {
-  //     legend: {
-  //       display: true,
-  //     },
+    plugins: {
+      legend: {
+        display: true,
+      },
 
-  //     tooltip: {
-  //       // ⤵️ tooltip main styles
-  //       backgroundColor: '#ffeaff',
-  //       displayColors: false, // removes unnecessary legend
-  //       padding: 10,
+      tooltip: {
+        // ⤵️ tooltip main styles
+        backgroundColor: '#ffeaff',
+        displayColors: false, // removes unnecessary legend
+        padding: 10,
 
-  //       // ⤵️ title
-  //       titleColor: '#0b4ad2',
-  //       titleFont: {
-  //         size: 18
-  //       },
+        // ⤵️ title
+        titleColor: '#0b4ad2',
+        titleFont: {
+          size: 18
+        },
 
-  //       // ⤵️ body
-  //       bodyColor: '#2D2F33',
-  //       bodyFont: {
-  //         size: 13
-  //       }
-  //     }
-  //   }
-  // };
+        // ⤵️ body
+        bodyColor: '#2D2F33',
+        bodyFont: {
+          size: 13
+        }
+      }
+    }
+  };
 
-ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
-}
 
-// createTable(){
-//   this.dtOptions = {
-//     ajax: 'http://127.0.0.1:5000/api/query8',
-//     columns: [{
-//       title: 'Item Name',
-//       data: 'this.item_name'
-      
-//     }, {
-//       title: 'Quantity',
-//       data: 'this.quantity'
-//     }, {
-//       title: 'Quarter',
-//       data: 'this.quarter'
-//     }]
-//   };
-// }
+
 
 
   constructor(private queryService: QueryService, private http: HttpClient) {
@@ -106,6 +88,9 @@ ngOnDestroy(): void {
 
   ngOnInit() {
     this.getQuery8ItemQuantityQuarter();
+    this.dtoptions = {
+      pagingType:'full_numbers'
+    }
     // this.createTable();
    
      }
@@ -113,12 +98,13 @@ ngOnDestroy(): void {
   getQuery8ItemQuantityQuarter(): void {
     this.queryService.getQuery8ItemQuantityQuarter().subscribe((data: any) => {
         for (const d of data) {
-          this.item_name.push(d.item_name)
-          this.quantity.push(d.quantity)
+          this.Item_name.push(d.Item_name)
+          this.Quantity.push(d.Quantity)
           this.quarter.push(d.quarter)
 
         }
         this.data_all = data;
+        this.dtTrigger.next(null);
         
       }
     )
