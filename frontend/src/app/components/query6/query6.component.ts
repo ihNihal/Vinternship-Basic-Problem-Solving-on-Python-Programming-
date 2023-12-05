@@ -26,16 +26,21 @@ export class Query6Component implements OnInit {
   createChart(){
   
     new Chart('MyChart', {
-       type: 'line',
+       type: 'bar',
        data: {
          labels: this.Store_key,
          datasets: [{
            label: 'Quantity',
            data: this.Quantity,
-           borderWidth: 1
+           borderWidth: 1,
+           barThickness:10,
+           borderColor:'lightgray',
+           backgroundColor:'lightblue',
+           
          }]
        },
        options: {
+       
          scales: {
            y: {
              beginAtZero: true

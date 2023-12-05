@@ -29,6 +29,7 @@ export class Query8Component implements OnInit  {
       type: "line",
       label: 'Sales accoriding to customer',
       data: this.Quantity,
+      
     
     }
   ];
@@ -39,6 +40,7 @@ export class Query8Component implements OnInit  {
     // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
+    indexAxis: 'y',
 
     // // ⤵️ Remove the grids
     // scales: {

@@ -4,6 +4,7 @@ import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
 import {Subject} from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -43,11 +44,21 @@ export class Query10Component implements OnInit {
          datasets: [{
            label: 'Quantity',
            data: this.Quantity,
-           borderWidth: 1
+           borderWidth: 1,
+           
+           
          }]
        },
        options: {
+        elements: {
+            line:{
+              borderColor: 'lightblue',
+              borderWidth: 10,
+            },
+        },
+        animation:false,
          scales: {
+          
            y: {
              beginAtZero: true
            }
