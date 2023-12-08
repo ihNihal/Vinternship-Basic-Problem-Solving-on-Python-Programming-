@@ -7,34 +7,36 @@ import {Subject} from 'rxjs';
 
 
 @Component({
-  selector: 'app-query1',
-  templateUrl: './query1.component.html',
-  styleUrls: ['./query1.component.css']
+  selector: 'app-an1a',
+  templateUrl: './an1a.component.html',
+  styleUrls: ['./an1a.component.css']
 })
-export class Query1Component implements OnInit {
+export class An1aComponent implements OnInit {
   
 
   data_all: any[] = [];
-  division: any[] = [];
-  sales: any[] = [];
+  Quarter: any[] = [];
+  Sales: any[] = [];
+  Store: any[] = [];
   dtoptions: DataTables.Settings={};
   dtTrigger: Subject<any> = new Subject<any>();
 
   chartData: ChartDataset[] = [
     {
-      type: "pie",
+      type: "bar",
       label: 'Sales in Taka',
-      data: this.sales,
+      data: this.Sales,
     }
   ];
 
-  chartLabels: string[] = this.division;
+  chartLabels: string[] = this.Store;
 
   chartOptions: ChartOptions = {
 
     // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
+    indexAxis: 'y',
 
     // // ⤵️ Remove the grids
     // scales: {
@@ -79,18 +81,21 @@ export class Query1Component implements OnInit {
   }
 
   ngOnInit() {
-    this.query1DivisionData();
+    this.an1aStoreSale();
     this.dtoptions = {
       pagingType:'full_numbers'
     }
   }
 
-  query1DivisionData(): void {
-    this.queryService.getQuery1Division().subscribe((data: any) => {
+  an1aStoreSale(): void {
+    this.queryService. getan1aStoreSale().subscribe((data: any) => {
         for (const d of data) {
           console.log(d)
-          this.division.push(d.division)
-          this.sales.push(d.sales)
+          this.Quarter.push(d.Quarter)
+          this.Sales.push(d.Sales)
+          this.Store.push(d.Store)
+
+
         }
         this.data_all = data;
         this.dtTrigger.next(null);

@@ -20,6 +20,7 @@ import { Query9Component } from './components/query9/query9.component';
 import { Query10Component } from './components/query10/query10.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { An1aComponent } from './components/an1a/an1a.component';
 
 
 
@@ -39,6 +40,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     Query10Component,
     HeaderComponent,
     SideNavComponent,
+    An1aComponent,
   ],
     imports: [
         BrowserModule,

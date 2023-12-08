@@ -86,6 +86,14 @@ list =[
     ,
     routerLink: '/query10',
   },
+  
+  {
+    number: '12',
+    name: 'Analytics 1a',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an1a',
+  },
 ]
 
   constructor(private router: Router) { }

@@ -48,4 +48,7 @@ export class QueryService {
   getQuery10MonthQuantityStore(): Observable<any> {
     return this.http.get<any>(`${baseUrl}/query10`);
   }
+  getan1aStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an1a`);
+  }
 }

@@ -61,7 +61,7 @@
     <div class="row">
       <div class="col-4 p-2">
         <div class="card p-2 text-center">
-          <h2 class="text-primary text-center">Query 1</h2>
+          <h2 class="text-primary text-center">Analytics 1A</h2>
           <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
@@ -71,8 +71,10 @@
             </thead>
             <tbody>
             <tr *ngFor="let data of data_all">
-                <td>{{ data.division }}</td>
-                <td>{{ data.sales }}</td>
+                <td>{{ data.Store }}</td>
+                <td>{{ data.Quarter }}</td>
+                <td>{{ data.Sales }}</td>
+
                
             </tr>
             </tbody>

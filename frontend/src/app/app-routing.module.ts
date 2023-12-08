@@ -11,6 +11,8 @@ import { Query7Component } from './components/query7/query7.component';
 import { Query8Component } from './components/query8/query8.component';
 import { Query9Component } from './components/query9/query9.component';
 import { Query10Component } from './components/query10/query10.component';
+import { An1aComponent } from './components/an1a/an1a.component';
+
 
 
 
@@ -26,6 +28,8 @@ const routes: Routes = [
   {path: 'query8', component: Query8Component},
   {path: 'query9', component: Query9Component},
   {path: 'query10', component: Query10Component},
+  {path: 'an1a', component: An1aComponent},
+
 
 
 

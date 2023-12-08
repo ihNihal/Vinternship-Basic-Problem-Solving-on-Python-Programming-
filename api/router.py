@@ -8,6 +8,8 @@ from QueryServices.query7service import Query7API
 from QueryServices.query8service import Query8API
 from QueryServices.query9service import Query9API
 from QueryServices.query10service import Query10API
+from QueryServices.analytics1aService import Analytis1aAPI
+
 
 
 from flask import Blueprint
@@ -23,6 +25,8 @@ query_api.add_url_rule('/query7', view_func=Query7API.as_view("Get the products 
 query_api.add_url_rule('/query8', view_func=Query8API.as_view("Get the season(quarter)that is the worst for each product item"))
 query_api.add_url_rule('/query9', view_func=Query9API.as_view("Get the total sales of items geographically (division-wise)"))
 query_api.add_url_rule('/query10', view_func=Query10API.as_view("Get the average sales of products sales per store monthly"))
+query_api.add_url_rule('/an1a', view_func=Analytis1aAPI.as_view("Which store had the highest total sales in the last quarter of the year"))
+
                        
 
 
