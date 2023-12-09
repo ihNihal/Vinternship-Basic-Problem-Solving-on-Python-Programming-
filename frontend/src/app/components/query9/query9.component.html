@@ -51,17 +51,14 @@
 </head>
 <body>
 
-<div class="container">
-  <div class="row">
-    <div class="col-4 p-2">
-      <div class="card">
-        <div class="card-header text-center">
-          <h2>Query 9</h2>
-        </div>
-        <div class="card-content text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 p-2">
+        <div class="card p-2 text-center">
+          <h2 class="text-primary text-center">Query 9</h2>
           <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
             <thead>
-            <tr>
+              <tr>
                 <th>Item Name</th>
                 <th>Division</th>
                 <th>Quantity</th>
@@ -78,9 +75,13 @@
         </table>
         </div>
       </div>
+      <div class="col-8">
+        <div class="chart-container">
+          <canvas  id="MyChart" >{{ chart }}</canvas>
+    </div>
+      </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ChartDataset, ChartOptions} from "chart.js";
+import {ChartDataset, ChartOptions,Chart} from "chart.js";
 import {QueryService} from "../../services/query.service";
 import {query} from "@angular/animations";
 import {HttpClient} from "@angular/common/http";
@@ -14,11 +14,42 @@ import {Subject} from 'rxjs';
 export class Query9Component implements OnInit {
 
   data_all: any[] = [];
-  item_name: any[] = [];
-  quantity: any[] = [];
-  division: any[] = [];
+  Item_name: any[] = [];
+  Quantity: any[] = [];
+  Division: any[] = [];
+  public chart: any;
+
   dtoptions: DataTables.Settings={};
   dtTrigger: Subject<any> = new Subject<any>();
+
+
+  createChart(){
+  
+    new Chart('MyChart', {
+       type: 'bar',
+       data: {
+         labels: this.Division,
+         datasets: [{
+           label: 'Quantity',
+           data: this.Quantity,
+           borderWidth: 1,
+           barThickness:10,
+           borderColor:'blue',
+           backgroundColor:'lightblue',
+
+           
+         }]
+       },
+       options: {
+       
+         scales: {
+           y: {
+             beginAtZero: true
+           }
+         }
+       }
+     });
+   }
 
 
   constructor(private queryService: QueryService, private http: HttpClient) {
@@ -29,15 +60,16 @@ export class Query9Component implements OnInit {
     this.dtoptions = {
       pagingType:'full_numbers'
     }
+    this.createChart();
   }
 
   getQuery9DivisionItemQuantity(): void {
     this.queryService.getQuery9DivisionItemQuantity().subscribe((data: any) => {
         for (const d of data) {
           console.log(d)
-          this.division.push(d.division)
-          this.item_name.push(d.item_name)
-          this.quantity.push(d.quantity)
+          this.Division.push(d.Division)
+          this.Item_name.push(d.Item_name)
+          this.Quantity.push(d.Quantity)
 
         }
         this.data_all = data;
