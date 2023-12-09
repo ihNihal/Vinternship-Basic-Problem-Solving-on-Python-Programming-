@@ -26,56 +26,52 @@ export class An1aComponent implements OnInit {
       type: "bar",
       label: 'Sales in Taka',
       data: this.Sales,
+      barThickness: 20,
+      borderColor: "black",
+      borderWidth:1,
     }
   ];
 
   chartLabels: string[] = this.Store;
 
   chartOptions: ChartOptions = {
-
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
     indexAxis: 'y',
-
-    // // ⤵️ Remove the grids
-    // scales: {
-    //   xAxis: {
-    //     display: false,
-    //     grid: {
-    //       drawBorder: false // removes random border at bottom
-    //     }
-    //   },
-    //   yAxis: {
-    //     display: false
-    //   }
-    // },
-
     plugins: {
       legend: {
         display: true,
       },
-
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 13
         }
       }
+    },
+    scales: {
+      x: {
+        // Adjust bar thickness here
+         // Change the value as needed
+      },
+      y: {
+        beginAtZero: true,
+      }
+    },
+    elements: {
+      bar: {
+        backgroundColor: '#4CAF50', // Change the color as needed
+      }
     }
   };
+  
 
   constructor(private queryService: QueryService, private http: HttpClient) {
   }

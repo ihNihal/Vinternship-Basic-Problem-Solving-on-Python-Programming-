@@ -40,7 +40,9 @@ export class Query2Component implements OnInit {
         datasets: [{
           label: 'Sales',
           data: this.sales,
-          borderWidth: 1
+          borderWidth: 1,
+          barThickness: 20,
+          borderColor: 'black',
         }]
       },
       options: {

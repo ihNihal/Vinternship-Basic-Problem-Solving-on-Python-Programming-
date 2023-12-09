@@ -6,7 +6,26 @@
     </app-side-nav>
     <div class="display-area p-3" [ngClass]="{'display-area-shrink': sideNavStatus}">
       <!-- <p class="fs-1 fw-bold fst-italic ">Main display area</p> -->
-      
+      <div class="container-fluid g-0" *ngIf="isHomePage">
+        <!-- Your existing content for the homepage -->
+        
+        <main>
+          <div class="home-animated">
+            <h1>
+               <span class="text-info">
+                vInternship
+               </span> 
+               "Supporting Blended Learning Evironment"
+            </h1>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img">
+              <img src="assets/vi-5.svg" class="img-fluid animated" alt="image">
+            </div>
+          </div>
+         
+            <!-- Your existing content for the homepage -->
+          
+        </main>
+      </div>
     </div>
   </main>
 </div>

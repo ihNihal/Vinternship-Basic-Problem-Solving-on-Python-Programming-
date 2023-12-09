@@ -42,3 +42,50 @@ transition: left 250ms ease-in, width 250ms ease-in;
     width: calc(100% - 250px);
     left: 250px;
 }
+#hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: black;
+    display: flex;
+    
+}
+@keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0); /* Start and end position: no vertical movement */
+    }
+    50% {
+      transform: translateY(-20px); /* Middle position: move up by 20 pixels */
+    }
+  }
+  
+  .img-fluid.animated {
+    animation: moveUpDown 2s ease-in-out infinite; /* Adjust the duration and timing function as needed */
+  }
+
+img, svg {
+    vertical-align: middle;
+    align-items: center;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+    display: flex;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.home-animated{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    
+}
+

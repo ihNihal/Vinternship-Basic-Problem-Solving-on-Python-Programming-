@@ -34,8 +34,9 @@ export class Query6Component implements OnInit {
            data: this.Quantity,
            borderWidth: 1,
            barThickness:10,
-           borderColor:'lightgray',
+           borderColor:'blue',
            backgroundColor:'lightblue',
+
            
          }]
        },
