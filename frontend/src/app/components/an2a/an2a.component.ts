@@ -7,17 +7,17 @@ import {Subject} from 'rxjs';
 
 
 @Component({
-  selector: 'app-an1a',
-  templateUrl: './an1a.component.html',
-  styleUrls: ['./an1a.component.css']
+  selector: 'app-an2a',
+  templateUrl: './an2a.component.html',
+  styleUrls: ['./an2a.component.css']
 })
-export class An1aComponent implements OnInit {
+export class An2aComponent implements OnInit {
   
 
   data_all: any[] = [];
-  Quarter: any[] = [];
+  Customer: any[] = [];
+  Month: any[] = [];
   Sales: any[] = [];
-  Store: any[] = [];
   dtoptions: DataTables.Settings={};
   dtTrigger: Subject<any> = new Subject<any>();
 
@@ -26,18 +26,18 @@ export class An1aComponent implements OnInit {
       type: "bar",
       label: 'Sales in Taka',
       data: this.Sales,
-      barThickness: 20,
+      barThickness: 10,
       borderColor: "black",
       borderWidth:1,
     }
   ];
 
-  chartLabels: string[] = this.Sales;
+  chartLabels: string[] = this.Customer;
 
   chartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: true,
-    indexAxis: 'y',
+    
     plugins: {
       legend: {
         display: true,
@@ -60,7 +60,6 @@ export class An1aComponent implements OnInit {
       x: {
         // Adjust bar thickness here
          // Change the value as needed
-       
       },
       y: {
         beginAtZero: true,
@@ -78,19 +77,19 @@ export class An1aComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.an1aStoreSale();
+    this.an2aStoreSale();
     this.dtoptions = {
       pagingType:'full_numbers'
     }
   }
 
-  an1aStoreSale(): void {
-    this.queryService. getan1aStoreSale().subscribe((data: any) => {
+  an2aStoreSale(): void {
+    this.queryService. getan2aStoreSale().subscribe((data: any) => {
         for (const d of data) {
           console.log(d)
-          this.Quarter.push(d.Quarter)
+          this.Customer.push(d.Customer)
+          this.Month.push(d.Month)
           this.Sales.push(d.Sales)
-          this.Store.push(d.Store)
 
 
         }

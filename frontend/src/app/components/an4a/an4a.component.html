@@ -61,21 +61,21 @@
     <div class="row">
       <div class="col-4 p-2">
         <div class="card p-2 text-center">
-          <h2 class="text-primary text-center">Store and Time</h2>
+          <h2 class="text-primary text-center">Store and time -> Inventory</h2>
           <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
-                <th>Division</th>
-                <th>Quarter</th>
                 <th>Sales</th>
+                <th>Store</th>
+                <th>Year</th>
 
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let data of data_all">
-                <td>{{ data.Store }}</td>
-                <td>{{ data.Quarter }}</td>
                 <td>{{ data.Sales }}</td>
+                <td>{{ data.Store }}</td>
+                <td>{{ data.Year }}</td>
 
                
             </tr>
@@ -96,8 +96,8 @@
         <div class="card" style="width: 60rem;">
           <h2>Description of this analytics: </h2>
           <h4>
-            Explore whether there are seasonal variations in sales. Some products or divisions may experience higher sales during certain quarters due to seasonal factors,
-            Correlate sales data with marketing and promotional activities. Determine which quarters or divisions saw a spike in sales due to specific campaigns.
+            Identify patterns and trends in total sales over different years for each store. Determine if there are consistent yearly increases or decreases in sales.
+            The analysis provides a basis for informed decision-making by highlighting areas of strength and weakness across stores.
           </h4>
         </div>
       </div>

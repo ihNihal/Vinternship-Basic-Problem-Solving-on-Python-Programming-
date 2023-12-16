@@ -49,6 +49,35 @@ export class QueryService {
     return this.http.get<any>(`${baseUrl}/query10`);
   }
   getan1aStoreSale(): Observable<any> {
+    
     return this.http.get<any>(`${baseUrl}/an1a`);
+  }
+  getan1bStoreSale(): Observable<any> {
+    
+    return this.http.get<any>(`${baseUrl}/an1b`);
+  }
+  getan2aStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an2a`);
+  }
+  getan2bStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an2b`);
+  }
+  getan3aStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an3a`);
+  }
+  getan3bStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an3b`);
+  }
+  getan4aStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an4a`);
+  }
+  getan4bStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an4b`);
+  }
+  getan5aStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an5a`);
+  }
+  getan5bStoreSale(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/an5b`);
   }
 }

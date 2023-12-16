@@ -21,6 +21,15 @@ import { Query10Component } from './components/query10/query10.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { An1aComponent } from './components/an1a/an1a.component';
+import { An1bComponent } from './components/an1b/an1b.component';
+import { An2aComponent } from './components/an2a/an2a.component';
+import { An2bComponent } from './components/an2b/an2b.component';
+import { An3bComponent } from './components/an3b/an3b.component';
+import { An3aComponent } from './components/an3a/an3a.component';
+import { An4aComponent } from './components/an4a/an4a.component';
+import { An4bComponent } from './components/an4b/an4b.component';
+import { An5aComponent } from './components/an5a/an5a.component';
+import { An5bComponent } from './components/an5b/an5b.component';
 
 
 
@@ -41,6 +50,15 @@ import { An1aComponent } from './components/an1a/an1a.component';
     HeaderComponent,
     SideNavComponent,
     An1aComponent,
+    An1bComponent,
+    An2aComponent,
+    An2bComponent,
+    An3bComponent,
+    An3aComponent,
+    An4aComponent,
+    An4bComponent,
+    An5aComponent,
+    An5bComponent,
   ],
     imports: [
         BrowserModule,

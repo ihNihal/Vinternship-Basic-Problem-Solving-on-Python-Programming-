@@ -7,17 +7,17 @@ import {Subject} from 'rxjs';
 
 
 @Component({
-  selector: 'app-an1a',
-  templateUrl: './an1a.component.html',
-  styleUrls: ['./an1a.component.css']
+  selector: 'app-an5b',
+  templateUrl: './an5b.component.html',
+  styleUrls: ['./an5b.component.css']
 })
-export class An1aComponent implements OnInit {
+export class An5bComponent implements OnInit {
   
 
   data_all: any[] = [];
-  Quarter: any[] = [];
-  Sales: any[] = [];
-  Store: any[] = [];
+  Item: any[] = [];
+  Quantity: any[] = [];
+  Year: any[] = [];
   dtoptions: DataTables.Settings={};
   dtTrigger: Subject<any> = new Subject<any>();
 
@@ -25,19 +25,19 @@ export class An1aComponent implements OnInit {
     {
       type: "bar",
       label: 'Sales in Taka',
-      data: this.Sales,
+      data: this.Quantity,
       barThickness: 20,
       borderColor: "black",
       borderWidth:1,
     }
   ];
 
-  chartLabels: string[] = this.Sales;
+  chartLabels: string[] = this.Item;
 
   chartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: true,
-    indexAxis: 'y',
+    
     plugins: {
       legend: {
         display: true,
@@ -60,7 +60,6 @@ export class An1aComponent implements OnInit {
       x: {
         // Adjust bar thickness here
          // Change the value as needed
-       
       },
       y: {
         beginAtZero: true,
@@ -78,19 +77,19 @@ export class An1aComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.an1aStoreSale();
+    this.an5bStoreSale();
     this.dtoptions = {
       pagingType:'full_numbers'
     }
   }
 
-  an1aStoreSale(): void {
-    this.queryService. getan1aStoreSale().subscribe((data: any) => {
+  an5bStoreSale(): void {
+    this.queryService. getan5bStoreSale().subscribe((data: any) => {
         for (const d of data) {
           console.log(d)
-          this.Quarter.push(d.Quarter)
-          this.Sales.push(d.Sales)
-          this.Store.push(d.Store)
+          this.Item.push(d.Item)
+          this.Quantity.push(d.Quantity)
+          this.Year.push(d.Year)
 
 
         }

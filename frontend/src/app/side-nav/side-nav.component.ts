@@ -89,10 +89,73 @@ list =[
   
   {
     number: '12',
-    name: 'Analytics 1a',
+    name: 'Store And Time 1',
     icon: 'fa-solid fa-chart-line'
     ,
     routerLink: '/an1a',
+  },
+  {
+    number: '13',
+    name: 'Store And Time 2',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an1b',
+  },
+  {
+    number: '14',
+    name: 'Customer And Time 1',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an2a',
+  },
+  {
+    number: '15',
+    name: 'Customer And Time 2',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an2b',
+  },
+  {
+    number: '16',
+    name: 'Item And Time 1',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an3a',
+  },
+  {
+    number: '17',
+    name: 'Item And Time 2',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an3b',
+  },
+  {
+    number: '18',
+    name: 'Store And Time -> Inventory 1',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/ana',
+  },
+  {
+    number: '19',
+    name: 'Store And Time -> Inventory 2',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an4b',
+  },
+  {
+    number: '20',
+    name: 'Item And Time-> Inventory 1',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an5a',
+  },
+  {
+    number: '21',
+    name: 'Item And Time-> Inventory 2',
+    icon: 'fa-solid fa-chart-line'
+    ,
+    routerLink: '/an5b',
   },
 ]
 

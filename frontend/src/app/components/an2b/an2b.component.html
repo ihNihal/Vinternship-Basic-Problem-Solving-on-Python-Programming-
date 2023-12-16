@@ -61,21 +61,21 @@
     <div class="row">
       <div class="col-4 p-2">
         <div class="card p-2 text-center">
-          <h2 class="text-primary text-center">Store and Time</h2>
+          <h2 class="text-primary text-center">Customer And Time</h2>
           <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
                 <th>Division</th>
-                <th>Quarter</th>
                 <th>Sales</th>
+                <th>Year</th>
 
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let data of data_all">
-                <td>{{ data.Store }}</td>
-                <td>{{ data.Quarter }}</td>
+                <td>{{ data.Division }}</td>
                 <td>{{ data.Sales }}</td>
+                <td>{{ data.Year }}</td>
 
                
             </tr>
@@ -96,8 +96,8 @@
         <div class="card" style="width: 60rem;">
           <h2>Description of this analytics: </h2>
           <h4>
-            Explore whether there are seasonal variations in sales. Some products or divisions may experience higher sales during certain quarters due to seasonal factors,
-            Correlate sales data with marketing and promotional activities. Determine which quarters or divisions saw a spike in sales due to specific campaigns.
+            Compare sales performance across different divisions. Identify top-performing divisions and those that may need improvement. This information can guide resource allocation and strategic decision-making.
+            Helps in optimizing resource allocation by focusing efforts on high-performing divisions and addressing underperforming ones.
           </h4>
         </div>
       </div>

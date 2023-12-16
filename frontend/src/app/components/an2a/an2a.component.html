@@ -61,20 +61,20 @@
     <div class="row">
       <div class="col-4 p-2">
         <div class="card p-2 text-center">
-          <h2 class="text-primary text-center">Store and Time</h2>
+          <h2 class="text-primary text-center">Customer And Time</h2>
           <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
-                <th>Division</th>
-                <th>Quarter</th>
+                <th>Customer</th>
+                <th>Month</th>
                 <th>Sales</th>
 
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let data of data_all">
-                <td>{{ data.Store }}</td>
-                <td>{{ data.Quarter }}</td>
+                <td>{{ data.Customer }}</td>
+                <td>{{ data.Month }}</td>
                 <td>{{ data.Sales }}</td>
 
                
@@ -95,9 +95,8 @@
         </div>
         <div class="card" style="width: 60rem;">
           <h2>Description of this analytics: </h2>
-          <h4>
-            Explore whether there are seasonal variations in sales. Some products or divisions may experience higher sales during certain quarters due to seasonal factors,
-            Correlate sales data with marketing and promotional activities. Determine which quarters or divisions saw a spike in sales due to specific campaigns.
+          <h4>Identify patterns in customer purchasing behavior over different months. Determine if there are specific months where customers tend to make more or fewer purchases.
+            Analyze the acquisition of new customers over time. Determine which months see an influx of new customers and evaluate the effectiveness of marketing efforts in attracting new business.
           </h4>
         </div>
       </div>
