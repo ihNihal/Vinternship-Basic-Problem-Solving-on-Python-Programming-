@@ -67,7 +67,7 @@ export class An3bComponent implements OnInit {
     },
     elements: {
       bar: {
-        backgroundColor: '#4CAF50', // Change the color as needed
+        backgroundColor: 'lightblue', // Change the color as needed
       }
     }
   };

@@ -26,13 +26,13 @@ export class An2bComponent implements OnInit {
       type: "bar",
       label: 'Sales in Taka',
       data: this.Sales,
-      barThickness: 20,
+      barThickness: 10,
       borderColor: "black",
       borderWidth:1,
     }
   ];
 
-  chartLabels: string[] = this.Year;
+  chartLabels: string[] = this.Division;
 
   chartOptions: ChartOptions = {
     responsive: true,
@@ -67,7 +67,7 @@ export class An2bComponent implements OnInit {
     },
     elements: {
       bar: {
-        backgroundColor: '#4CAF50', // Change the color as needed
+        backgroundColor: 'lightblue', // Change the color as needed
       }
     }
   };

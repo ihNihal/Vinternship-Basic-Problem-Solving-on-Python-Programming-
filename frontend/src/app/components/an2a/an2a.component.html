@@ -88,7 +88,7 @@
           <canvas baseChart
                   [type]="'line'"
                   [datasets]="chartData"
-                  [labels]="chartLabels"
+                  [labels]="chartLabels.slice(0,100)"
                   [options]="chartOptions">
           </canvas>
           

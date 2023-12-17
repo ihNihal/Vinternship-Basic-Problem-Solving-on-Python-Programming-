@@ -75,7 +75,7 @@
             <tr *ngFor="let data of data_all">
                 <td>{{ data.Item }}</td>
                 <td>{{ data.Quarter }}</td>
-                <td>{{ data.Sales }}</td>
+                <td>{{ data.Sales | number:'1.0-0' }}</td>
 
                
             </tr>
@@ -88,7 +88,7 @@
           <canvas baseChart
                   [type]="'line'"
                   [datasets]="chartData"
-                  [labels]="chartLabels"
+                  [labels]="chartLabels.slice(0,50)"
                   [options]="chartOptions">
           </canvas>
           

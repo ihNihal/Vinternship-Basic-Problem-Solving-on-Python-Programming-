@@ -16,6 +16,7 @@ export class Query2Component implements OnInit {
   Name: any[] = [];
   sales: any[] = [];
   public chart: any;
+  tick: any[] = [];
   dtoptions: DataTables.Settings={};
   dtTrigger: Subject<any> = new Subject<any>();
 
@@ -46,15 +47,26 @@ export class Query2Component implements OnInit {
         }]
       },
       options: {
+
+        plugins:{
+          decimation:{
+            enabled:false,
+            algorithm: 'min-max',
+          },
+        },
         scales: {
+         
+          
           y: {
             beginAtZero: true
           }
-        }
+        },
+        
       }
     });
   }
 
+ 
   query2NameSales(): void {
     this.queryService.getQuery2NameSales().subscribe((data: any) => {
         for (const d of data) {

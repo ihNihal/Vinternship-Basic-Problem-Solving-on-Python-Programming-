@@ -25,6 +25,7 @@ export class Query1Component implements OnInit {
       type: "pie",
       label: 'Sales in Taka',
       data: this.sales,
+      
     }
   ];
 
@@ -36,22 +37,29 @@ export class Query1Component implements OnInit {
     responsive: true,
     maintainAspectRatio: true,
 
-    // // ⤵️ Remove the grids
-    // scales: {
-    //   xAxis: {
-    //     display: false,
-    //     grid: {
-    //       drawBorder: false // removes random border at bottom
-    //     }
-    //   },
-    //   yAxis: {
-    //     display: false
-    //   }
-    // },
+    // ⤵️ Remove the grids
+    scales: {
+      xAxis: {
+        display: true,
+        afterDataLimits(axis) {
+            
+        },
+        grid: {
+          drawBorder: false // removes random border at bottom
+        }
+      },
+      yAxis: {
+        display: false
+      }
+    },
 
     plugins: {
       legend: {
         display: true,
+      },
+      decimation:{
+        enabled:false,
+        algorithm: 'min-max',
       },
 
       tooltip: {

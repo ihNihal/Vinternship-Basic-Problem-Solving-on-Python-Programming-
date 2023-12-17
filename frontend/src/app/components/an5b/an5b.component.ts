@@ -67,7 +67,7 @@ export class An5bComponent implements OnInit {
     },
     elements: {
       bar: {
-        backgroundColor: '#4CAF50', // Change the color as needed
+        backgroundColor: 'lightblue', // Change the color as needed
       }
     }
   };
@@ -85,7 +85,7 @@ export class An5bComponent implements OnInit {
 
   an5bStoreSale(): void {
     this.queryService. getan5bStoreSale().subscribe((data: any) => {
-        for (const d of data) {
+        for (const d of data.slice(0,100)) {
           console.log(d)
           this.Item.push(d.Item)
           this.Quantity.push(d.Quantity)

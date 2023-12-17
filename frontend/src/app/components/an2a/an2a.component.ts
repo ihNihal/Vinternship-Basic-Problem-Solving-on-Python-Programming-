@@ -57,9 +57,8 @@ export class An2aComponent implements OnInit {
       }
     },
     scales: {
-      x: {
-        // Adjust bar thickness here
-         // Change the value as needed
+      x:{
+
       },
       y: {
         beginAtZero: true,
@@ -67,7 +66,7 @@ export class An2aComponent implements OnInit {
     },
     elements: {
       bar: {
-        backgroundColor: '#4CAF50', // Change the color as needed
+        backgroundColor: 'lightblue', // Change the color as needed
       }
     }
   };

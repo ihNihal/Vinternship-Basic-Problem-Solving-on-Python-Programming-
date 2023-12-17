@@ -134,7 +134,7 @@ list =[
     name: 'Store And Time -> Inventory 1',
     icon: 'fa-solid fa-chart-line'
     ,
-    routerLink: '/ana',
+    routerLink: '/an4a',
   },
   {
     number: '19',
